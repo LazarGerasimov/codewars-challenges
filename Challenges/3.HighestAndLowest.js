@@ -1,25 +1,26 @@
 // In this little assignment you are given a string of space separated numbers, and have to return the highest and lowest number.
 
-function highAndLow(numbers) {
-
+function highAndLow(numbers){
+    
   let inputArr = numbers.split(" ");
-
-  let maxNumber = 0;
-  let minNumber = Number.MAX_SAFE_INTEGER;
-
+  
+  let maxNumber = Number.MIN_SAFE_INTEGER; 
+  let minNumber = Number.MAX_SAFE_INTEGER; 
+  
   for (let i = 0; i < inputArr.length; i++) {
-
+    
     if (Number(inputArr[i]) > maxNumber) {
       maxNumber = Number(inputArr[i])
     }
-
+    
     if (Number(inputArr[i]) < minNumber) {
       minNumber = Number(inputArr[i])
     }
-
+    
   }
-
-  return `${maxNumber} ${minNumber}`
+  
+    return `${maxNumber} ${minNumber}`
+    
 }
 
 
