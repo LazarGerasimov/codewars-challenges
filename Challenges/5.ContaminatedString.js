@@ -7,10 +7,10 @@
 
 // Note: The character is a string of length 1 or an empty string.
 
-function contamination(text, char){
-  
+function contamination(text, char) {
+
   let arrInfestedCharacters = [];
-  
+
   for (let i = 0; i < text.length; i++) {
     if (char === "" || text === "") {
       return "";
@@ -18,5 +18,6 @@ function contamination(text, char){
       arrInfestedCharacters.push(char);
     }
   }
-  
+
   return arrInfestedCharacters.join("");
+}
