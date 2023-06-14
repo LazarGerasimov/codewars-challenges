@@ -1,6 +1,5 @@
 // Write a function that takes an array of strings as an argument and returns a sorted array containing the same strings, ordered from shortest to longest.
 
-
 function solve(arr) {
 
   let object = {};
@@ -21,7 +20,6 @@ function solve(arr) {
 
   return resultArr;
 }
-
 
 
 // For example, if this array were passed as an argument:
