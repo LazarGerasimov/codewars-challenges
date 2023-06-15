@@ -2,7 +2,7 @@
 
 // This should only test the second array dimension of the array. The values of the nested arrays don't have to be arrays.
 
-
+// 1)
 
 const arrCheck = (value) => {
   let isArr = true; 
@@ -15,6 +15,10 @@ const arrCheck = (value) => {
   
   return isArr;
 }
+
+//  // 2) Shorter solution
+// const arrCheck = a => a.every(Array.isArray);
+
 
 
 // Examples:
