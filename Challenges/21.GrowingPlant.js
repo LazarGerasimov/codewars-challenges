@@ -2,7 +2,7 @@
 
 function growingPlant(upSpeed, downSpeed, desiredHeight) {
 
-  let plantHeight = 0; 
+  let plantHeight = 0;
   let daysCount = 0;
 
   while (plantHeight < desiredHeight) {
@@ -12,7 +12,7 @@ function growingPlant(upSpeed, downSpeed, desiredHeight) {
       break;
     }
     plantHeight -= downSpeed;
-    
+
   }
 
   return daysCount;
