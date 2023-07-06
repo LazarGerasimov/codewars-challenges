@@ -34,7 +34,7 @@ function getFreeUrinals(urinals){
       break; 
     }
 
-    //catch cases where the first two spaces are zeros
+    //catch edge cases where the first two spaces are zeros
     if (urinalsArr[0] === 0 && urinalsArr[1] === 0) {
       freeSpaces++;
       urinalsArr[0] = 1;
