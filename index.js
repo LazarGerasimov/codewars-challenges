@@ -25,15 +25,20 @@ function solve(area, width) {
   let waterbombsNeeded = 0;
   // split fire zones by Y (buildings)
   let areas = area.split("Y");
+  console.log(areas);
   // catch edge case where the input is just 1 building
   if (area === "Y") return 0;
 
   // check if all split areas are within the reach of the water bomb
   if (areas.every(x => x.length <= width)) {
-    //if true, the bombs needed will be equal to the amount of fire zones (split areas)
-    return areas.length; 
+    //if true, the bombs needed will be equal to the amount of fire zones (split areas) after we remove the empty strings
+    let result = areas.filter(x => x !== "");
+    console.log(result.length)
+    return result.length; 
   } else {
     for (let fire of areas) {
+      //skip a step if we go through an empty string
+      if (fire === "") continue;
       // check for fire zones bigger than the water bomb range
       if (fire.length > width) {
         if (fire.length % width == 0) {
@@ -49,4 +54,4 @@ function solve(area, width) {
 
   return waterbombsNeeded;
 }
-solve("xxYxx", 3);
+solve("xxxxYxxxxYxYxxY", 4);
