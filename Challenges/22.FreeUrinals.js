@@ -20,18 +20,18 @@
 
 // Have fun and don't pee into the wrong urinal ;)
 
-function getFreeUrinals(urinals){
+function getFreeUrinals(urinals) {
 
-  let freeSpaces = 0; 
+  let freeSpaces = 0;
   let urinalsArr = urinals.split("").map(x => Number(x));
   // console.log(urinalsArr);
 
   for (let i = 0; i < urinalsArr.length; i++) {
-    
+
     //catch edge case where we only have 1 urinal 
     if (urinalsArr.length === 1 && urinalsArr[0] === 0) {
       freeSpaces++;
-      break; 
+      break;
     }
 
     //catch edge cases where the first two spaces are zeros
@@ -55,9 +55,9 @@ function getFreeUrinals(urinals){
 
   if (freeSpaces === 0) {
     freeSpaces = -1;
-  } 
+  }
 
   return freeSpaces;
-  
+
 }
 getFreeUrinals("1011001");
