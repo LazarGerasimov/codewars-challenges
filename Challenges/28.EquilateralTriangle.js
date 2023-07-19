@@ -31,9 +31,9 @@ Notes:
 
 function isTriangleNumber(number) {
 
-  // Approach - find a what number sits on the end of each row and creata an algorithm that will calculate what the last number on each row is and compare it with the input number.
+  // Approach - find a what number sits on the end of each row and create an algorithm that will calculate what the last number on each row is and compare it with the input number.
 
-  // As we can see, the last number on the first roll is 1, followed by 3 as a last number on the second row, followed by 6 on the third row, 10 on the forth - number increases with previous incrementation plus one. 
+  // As we can see, the last number on the first row is 1, followed by 3 as a last number on the second row, followed by 6 on the third row, 10 on the fourth - number increases with previous incrementation plus one. 
   
   // n will be the initial incrementation value, set to 1 by default as we need to implement a plus one step within the for loop. 
   
