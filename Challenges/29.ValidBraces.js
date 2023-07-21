@@ -16,7 +16,7 @@ Examples:
 
 */
 
-function validBraces(braces){
+function validBraces(braces) {
 
   let bracesStack = [];
 
@@ -26,7 +26,7 @@ function validBraces(braces){
     // early exit for inputs with less than 2 elements
     if (braces.length < 2) {
       return false;
-    }   
+    }
 
     // early exit for inputs that have odd length
     if (braces.length % 2 !== 0) {
@@ -35,14 +35,14 @@ function validBraces(braces){
 
     // Build a logic where upon receiving an opening bracket, push into a result array the respective closing bracket. In the third "else if" we will always pop the last element of the array regardless of whether it matches the current closing bracket or not. That way, in case we have only matching brackets, the array should be empty in the end. If they do not match, we will have an early exit and will return false
     if (brace === "(") {
-            bracesStack.push(")");
-        } else if (brace === "[") {
-            bracesStack.push("]");
-        } else if (brace === "{") {
-            bracesStack.push("}");
-        } else if (brace !== bracesStack.pop()){
-            return false; 
-        }
+      bracesStack.push(")");
+    } else if (brace === "[") {
+      bracesStack.push("]");
+    } else if (brace === "{") {
+      bracesStack.push("}");
+    } else if (brace !== bracesStack.pop()) {
+      return false;
+    }
   }
   return bracesStack.length === 0;
 }
