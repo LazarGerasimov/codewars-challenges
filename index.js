@@ -1,19 +1,36 @@
-/* 
+// You need to cook pancakes, but you are very hungry. As known, one needs to fry a pancake one minute on each side. What is the minimum time you need to cook n pancakes, if you can put on the frying pan only m pancakes at a time? n and m are positive integers between 1 and 1000.
 
-Jaden Smith, the son of Will Smith, is the star of films such as The Karate Kid (2010) and After Earth (2013). Jaden is also known for some of his philosophy that he delivers via Twitter. When writing on Twitter, he is known for almost always capitalizing every word. For simplicity, you'll have to capitalize each word, check out how contractions are expected to be in the example below.
+function cookPancakes(n, m) {
 
-Your task is to convert strings to how they would be written by Jaden Smith. The strings are actual quotes from Jaden Smith, but they are not capitalized in the same way he originally typed them.
+  let allPancakes = n;
+  let panCapacity = m;
+  let timeNeeded = 0;
 
-Example:
-Not Jaden-Cased: "How can mirrors be real if our eyes aren't real"
-Jaden-Cased:     "How Can Mirrors Be Real If Our Eyes Aren't Real"
-
-*/
-
-String.prototype.toJadenCase = function () { 
-  return this.split(" ").map(function(word){
-    return word.charAt(0).toUpperCase() + word.slice(1);
-  }).join(" ");
+  // case 1 where all pancakes can fit the pan, we can cook them at once - 1min on each side as per instructions
+  if (allPancakes <= panCapacity) {
+    timeNeeded = 2;
+  // case 2 where we will need multiple cooking sessions
+  } else {
+    // case 2.1 when the number of pancakes is divisible by the capacity (we will have several cooking sessions with equal number of pancakes being cooked at a time)
+    if (allPancakes % panCapacity === 0) {
+      timeNeeded = (allPancakes / panCapacity) * 2
+    } else {
+      timeNeeded = ((Math.floor(allPancakes / panCapacity)) * 2) + 2;
+    }
+  }
+  
+  return timeNeeded;
 }
+cookPancakes(9, 2);
 
+// Tests: 
 
+// const Test = require('@codewars/test-compat');
+
+// describe("Sample Tests", function() {
+//   it("It should pass sample tests", function(){
+//     Test.assertEquals(cookPancakes(1, 2), 2)
+//     Test.assertEquals(cookPancakes(2, 2), 2)
+//     Test.assertEquals(cookPancakes(4, 2), 4)
+//   })  
+// })
